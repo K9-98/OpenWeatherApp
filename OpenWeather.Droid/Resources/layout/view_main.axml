@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <ProgressBar
+       android:id="@+id/main_loader"
+       style="?android:attr/progressBarStyle"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="323dp"
+       android:layout_marginEnd="173dp"
+       android:layout_marginStart="190dp"
+       android:layout_marginTop="232dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" 
+       app:MvxBind="Visible Loader"
+       />
+
+  <TextView
+       android:id="@+id/textView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="328dp"
+       android:layout_marginStart="32dp"
+       android:layout_marginTop="16dp"
+       android:text="City"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" 
+       app:MvxBind="Visible !Loader"/>
+
+  <EditText
+       android:id="@+id/chosenCity"
+       android:layout_width="321dp"
+       android:layout_height="46dp"
+       android:layout_marginTop="24dp"
+       android:ems="10"
+       android:inputType="text"
+       android:text=""
+       android:textColor="#000"
+       app:layout_constraintHorizontal_bias="0.507"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="@id/textView"
+       app:MvxBind="Text CityName;Visible !Loader"
+       
+       />
+
+  <Button
+       android:id="@+id/getWeather"
+       android:layout_width="115dp"
+       android:layout_height="30dp"
+       android:layout_marginTop="8dp"
+       android:background="#cbffa81e"
+       android:text="Get Weather"
+       android:textAllCaps="false"
+       android:textColor="#fff"
+       app:layout_constraintEnd_toStartOf="@+id/voiceInput"
+       app:layout_constraintHorizontal_bias="0.555"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/chosenCity"
+       app:MvxBind="Click GetWeatherCommand;Visible !Loader"
+       />
+
+  <Button
+      android:id="@+id/voiceInput"
+      android:layout_width="115dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="15dp"
+      android:layout_marginTop="8dp"
+      android:background="#cbffa81e"
+      android:text="Record"
+      android:textAllCaps="false"
+      android:textColor="#fff"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.555"
+      app:layout_constraintStart_toEndOf="@+id/getWeather"
+      app:layout_constraintTop_toBottomOf="@+id/chosenCity"
+      app:MvxBind="Visible !Loader"/>
+      />
+
+</android.support.constraint.ConstraintLayout>

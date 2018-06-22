@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation ="vertical"
+    >
+
+  <TextView
+       android:id="@+id/weatherHeader"
+       android:layout_width="wrap_content"
+       android:layout_height="32dp"
+       android:layout_marginStart="20dp"
+       android:layout_marginTop="20dp"
+       android:text="Weather in "
+       android:textSize="24dp"
+       android:textStyle="bold"
+       android:textColor="#000"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       />
+
+  <MvxImageView
+      android:id="@+id/weatherIcon"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginBottom="8dp"
+      android:layout_marginStart="15dp"
+      android:layout_marginTop="8dp"
+      app:layout_constraintBottom_toBottomOf="@+id/temperature"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/temperature"
+      />
+
+  <TextView
+      android:id="@+id/temperature"
+      android:layout_width="0dp"
+      android:layout_height="41dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="15dp"
+      android:text=""
+      android:textSize="30dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@id/weatherIcon"
+      app:layout_constraintTop_toBottomOf="@+id/weatherHeader" />
+
+  <TextView
+      android:id="@+id/forecast"
+      android:layout_width="wrap_content"
+      android:layout_height="19dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="10dp"
+      android:text=""
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+  <TextView
+      android:id="@+id/date"
+      android:layout_width="wrap_content"
+      android:layout_height="19dp"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="5dp"
+      android:text=""
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/forecast" />
+
+  <MvxListView
+        android:id="@+id/weatherListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/speak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="0.448"
+        app:MvxItemTemplate="@layout/list_adapter"
+        
+        >
+  </MvxListView>
+
+  <Button
+       android:id="@+id/speak"
+       android:layout_width="115dp"
+       android:layout_height="30dp"
+       android:layout_marginEnd="249dp"
+       android:layout_marginStart="47dp"
+       android:layout_marginBottom="20dp"
+       android:background="#cbffa81e"
+       
+       android:text="Read Weather"
+       android:textAllCaps="false"
+       android:textColor="#fff"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.555"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/weatherListView" />
+
+</android.support.constraint.ConstraintLayout>
